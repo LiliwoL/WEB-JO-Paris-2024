@@ -1,0 +1,42 @@
+﻿idLieu;lieu;GeoPoint;Site Olympique;Site paralympique
+1;Arena Bercy;48.838649, 2.378496;1;1
+2;Arena Champ-de-Mars;48.854536, 2.300413;1;1
+3;Arena Paris Nord;48.971314, 2.519183;1;1
+4;Arena Paris Sud;48.832068, 2.284126;0;0
+39;Arena Paris Sud 6 (Porte de Versailles);48.829624, 2.290777;1;1
+40;Arena Paris Sud 1 (Porte de Versailles);48.832068, 2.284126;1;1
+41;Arena Paris Sud 4 (Porte de Versailles);48.830231, 2.289126;1;1
+5;Arena Porte de La Chapelle;48.899483, 2.361803;1;1
+6;Centre aquatique;48.923457, 2.355527;1;0
+7;Centre national de tir;;0;0
+8;Château de Versailles;48.815115, 2.08208;1;1
+9;Colline d'Elancourt;;0;0
+10;Concorde;;0;0
+11;Golf national;48.751095, 2.0759;1;0
+12;Grand Palais;;0;0
+13;Hôtel de ville-Invalides;48.856858, 2.351415;1;0
+14;Invalides;48.862286, 2.313222;1;1
+15;Invalides-Pont Alexandre-III;;0;0
+16;Marina de Marseille;;0;0
+17;Parc des Princes;48.841319, 2.253076;1;0
+18;Paris La Défense Arena;48.89566, 2.22971;1;1
+19;Pont Alexandre-III;;0;0
+20;Quais de Seine;;0;0
+21;Site d'escalade;48.937188, 2.420467;1;0
+22;Stade BMX;48.787261, 2.034736;1;0
+23;Stade de Bordeaux;;0;0
+24;Stade de France;48.924388, 2.359871;1;1
+25;Stade de la Beaujoire;;0;0
+26;Stade de Lyon;;0;0
+27;Stade de Marseille;;0;0
+28;Stade de Nice;;0;0
+29;Stade Geoffroy-Guichard;;0;0
+30;Stade nautique-Bassin eau calme;;0;0
+31;Stade nautique-Bassin eau vive;;0;0
+32;Stade Pierre-Mauroy;;0;0
+33;Stade Roland-Garros;48.84732, 2.245501;1;1
+34;Stade tour Eiffel;48.857232, 2.296084;1;1
+35;Stade Yves-du-Manoir;;0;0
+36;Teahupoo;;0;0
+37;Trocadéro;;0;0
+38;Vélodrome national;48.788046, 2.034987;1;1
