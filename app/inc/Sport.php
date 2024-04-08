@@ -2,6 +2,11 @@
 
 class Sport
 {
+    /**
+     * Récupération de la liste de TOUS les sports en base
+     *
+     * @return mixed
+     */
     public function getSports()
     {
         global $conn;
@@ -11,6 +16,11 @@ class Sport
         return $stmt->fetchAll();
     }
 
+    /**
+     * Affichage de la liste des sports sous forme de UL
+     *
+     * @return string
+     */
     public function displaySports()
     {
         $sports = $this->getSports();
