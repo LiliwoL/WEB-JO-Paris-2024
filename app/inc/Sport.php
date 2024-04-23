@@ -7,7 +7,7 @@ class Sport
      *
      * @return mixed
      */
-    public function getSports()
+    public function getSports(): array
     {
         global $conn;
         $sql = "SELECT * FROM Sports";
@@ -22,7 +22,7 @@ class Sport
      * @param $id
      * @return mixed
      */
-    public function getSportById($id)
+    public function getSportById($id): array
     {
         global $conn;
         $sql = "SELECT * FROM Sports WHERE idSport = :id";
