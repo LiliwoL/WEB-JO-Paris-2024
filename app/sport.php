@@ -21,12 +21,12 @@
             require_once ('inc/init.php');
 
             // Récupération des paramètres de l'url
-            $id             = $_GET['id'];
-            $action         = $_GET['action'];
+            $id             = $_GET['id'] ?? 0;
+            $action         = $_GET['action'] ?? 'none';
 
-            // Netttoyage des paramètres recus
-            $id             = @filter_var($id, FILTER_SANITIZE_NUMBER_INT);
-            $action         = filter_var($action, FILTER_SANITIZE_STRING);
+            // Nettoyage des paramètres recus
+            $id             = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
+            $action         = htmlspecialchars($action);
 
             // Affichage d'un seul sport
             if ($action == 'show' && $id > 0)

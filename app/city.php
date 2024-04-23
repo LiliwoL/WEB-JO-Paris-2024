@@ -21,14 +21,14 @@
     require_once ('inc/init.php');
 
     // Récupération des paramètres de l'url
-    $id             = $_GET['id'];
-    $action         = $_GET['action'];
+    $id             = $_GET['id'] ?? 0;
+    $action         = $_GET['action'] ?? 'none';
 
-    // Netttoyage des paramètres recus
+    // Nettoyage des paramètres recus
     $id             = @filter_var($id, FILTER_SANITIZE_NUMBER_INT);
-    $action         = filter_var($action, FILTER_SANITIZE_STRING);
+    $action         = htmlspecialchars($action);
 
-    // Affichage d'une seul ville
+    // Affichage d'une seule ville
     if ($action == 'show' && $id > 0)
     {
         // Création d'un objet Ville à partir de l'id
@@ -37,7 +37,7 @@
         echo $city->displayCity($id);
     }
 
-    // Affichage de tous les villes
+    // Affichage de toutes les villes
     else if ($action == 'all')
     {
         $city = new City();
