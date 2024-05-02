@@ -35,6 +35,9 @@
                 $sport = new Sport();
                 // Affichage du sport par son id
                 echo $sport->displaySport($id);
+
+                // Affichage des villes dans lesquelles des compétitions de ce sport vont avoir lieu
+                echo $sport->displayCities($id);
             }
 
             // Affichage de tous les sports

@@ -32,6 +32,23 @@ class Sport
         return $stmt->fetch();
     }
 
+    public function getCitiesBySport($id): array
+    {
+        global $conn;
+
+        $sql = "SELECT DISTINCT Villes.idVille, Villes.ville FROM Villes
+                JOIN LieuxVilles ON LieuxVilles.idVille = Villes.idVille
+                JOIN Lieux ON Lieux.idLieu = LieuxVilles.idLieu
+                JOIN Calendrier ON Calendrier.idLieu = Lieux.idLieu
+                WHERE Calendrier.idSport = :id
+              ";
+
+        $stmt = $conn->getConn()->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
     /**
      * Affichage de tous les sports au format liste UL
      *
@@ -88,6 +105,22 @@ class Sport
     {
         $sport = $this->getSportById($id);
         $html = '<p>' . $sport['nom'] . '</p>';
+        return $html;
+    }
+
+    public function displayCities(int $id): string
+    {
+        $cities = $this->getCitiesBySport($id);
+        $html = '<h2>Villes où se déroule ce sport</h2>';
+        $html .= '<ul>';
+        foreach ($cities as $city) {
+            $html .= '<li>';
+            $html .= '<a href="city.php?id=' . $city['idVille'] . '&action=show">'. $city['ville'] . '</a>';
+            $html .= '</li>';
+        }
+        $html .= '</ul>';
+        //var_dump($cities);
+//        $html = '<p>' . $sport['nom'] . '</p>';
         return $html;
     }
 }
