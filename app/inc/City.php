@@ -23,6 +23,24 @@ class City
         return $stmt->fetch();
     }
 
+    public function getSports(int $id): array
+    {
+        global $conn;
+
+        $sql = "SELECT DISTINCT Sports.idSport, Sports.nom FROM Sports
+                JOIN Calendrier ON Calendrier.idSport = Sports.idSport
+                JOIN Lieux ON Lieux.idLieu = Calendrier.idLieu
+                JOIN LieuxVilles ON LieuxVilles.idLieu = Lieux.idLieu
+                JOIN Villes ON Villes.idVille = LieuxVilles.idVille
+                WHERE Villes.idVille = :id
+              ";
+
+        $stmt = $conn->getConn()->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
     public function displayCities(): string
     {
         $cities = $this->getCities();
@@ -64,6 +82,23 @@ class City
     {
         $city = $this->getCityById($id);
         $html = '<p>' . $city['ville'] . '</p>';
+        return $html;
+    }
+
+
+
+    public function displaySports(int $id): string
+    {
+        $sports = $this->getSports($id);
+        $html = '<h2>Sports</h2>';
+
+        $html .= '<ul>';
+        foreach ($sports as $sport) {
+            $html .= '<li>';
+            $html .= '<a href="sport.php?id=' . $sport['idSport'] . '&action=show">'. $sport['nom'] . '</a>';
+            $html .= '</li>';
+        }
+        $html .= '</ul>';
         return $html;
     }
 }

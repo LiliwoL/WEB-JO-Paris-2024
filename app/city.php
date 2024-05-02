@@ -33,8 +33,12 @@
     {
         // Création d'un objet Ville à partir de l'id
         $city = new City();
+
         // Affichage de la ville par son id
         echo $city->displayCity($id);
+
+        // Affichage des sports qui se déroulent dans cette ville
+        echo $city->displaySports($id);
     }
 
     // Affichage de toutes les villes
